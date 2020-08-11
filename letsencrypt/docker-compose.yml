@@ -1,0 +1,23 @@
+version: "2"
+services:
+  letsencrypt:
+    image: linuxserver/letsencrypt
+    container_name: letsencrypt
+    cap_add:
+      - NET_ADMIN
+    networks:
+      - lsio
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - URL=0lzi.tk
+      - SUBDOMAINS=www,nextcloud,home
+      - VALIDATION=http
+      - EXTRA_DOMAINS=olzi.tk,proofhut.co.uk  
+    volumes:
+      - /home/pi/docker-volumes/letsencrypt:/config
+    ports:
+      - 443:443
+      - 80:80
+    restart: unless-stopped

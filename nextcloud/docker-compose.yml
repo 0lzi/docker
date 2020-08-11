@@ -1,0 +1,46 @@
+version: "2"
+services:
+  nextcloud:
+    image: linuxserver/nextcloud
+    container_name: nextcloud
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - /home/pi/docker-volumes/nextcloud/config:/config
+      - /home/pi/docker-volumes/nextcloud/data:/data
+    depends_on:
+      - mariadb
+    restart: unless-stopped
+  mariadb:
+    image: linuxserver/mariadb
+    container_name: mariadb
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - MYSQL_ROOT_PASSWORD=oB7g4rJEm7bNYi
+      - TZ=Europe/London
+    volumes:
+      - /home/pi/docker-volumes/mariadb:/config
+    restart: unless-stopped
+  letsencrypt:
+    image: linuxserver/letsencrypt
+    container_name: letsencrypt
+    cap_add:
+        - NET_ADMIN
+    environment:
+        - PUID=1000
+        - PGID=1000
+        - TZ=Europe/London
+        - URL=0lzi.tk
+        - SUBDOMAINS=www,nextcloud,home
+        - VALIDATION=http
+        - EXTRA_DOMAINS=olzi.tk    
+    volumes:
+        - /home/pi/docker-volumes/letsencrypt:/config
+    ports:
+        - 443:443
+        - 80:80
+    restart: unless-stopped
+

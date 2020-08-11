@@ -1,0 +1,77 @@
+version: "2"
+services:
+  nextcloud:
+    image: linuxserver/nextcloud
+    container_name: nextcloud
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - /home/pi/docker-volumes/nextcloud/config:/config
+      - /home/pi/docker-volumes/nextcloud/data:/data
+    depends_on:
+      - mariadb
+    restart: unless-stopped
+  mariadb:
+    image: linuxserver/mariadb
+    container_name: mariadb
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - MYSQL_ROOT_PASSWORD="${MYSQL_ROOT_PASSWORD}"
+      - TZ=Europe/London
+    volumes:
+      - /home/pi/docker-volumes/mariadb:/config
+    restart: unless-stopped
+  letsencrypt:
+    image: linuxserver/letsencrypt
+    container_name: letsencrypt
+    cap_add:
+        - NET_ADMIN
+    environment:
+        - PUID=1000
+        - PGID=1000
+        - TZ=Europe/London
+        - URL=0lzi.tk
+        - SUBDOMAINS=www,nextcloud,home,nodered
+        - VALIDATION=http
+        - EXTRA_DOMAINS=olzi.tk,proofhut.co.uk,olinx.co.uk     
+    volumes:
+        - /home/pi/docker-volumes/letsencrypt:/config
+    ports:
+        - 443:443
+        - 80:80
+    restart: unless-stopped
+  ghost:
+      image: ghost
+      container_name: proofhut
+      environment:
+        - url=https://proofhut.co.uk
+      volumes:
+        - /home/pi/docker-volumes/ghost/content:/var/lib/ghost/content
+      ports:
+        - 3001:2368
+      restart: unless-stopped
+  ghost2:
+      image: ghost
+      container_name: olinx
+      environment:
+        - url=https://olinx.co.uk
+      volumes:
+        - /home/pi/docker-volumes/olinx/content:/var/lib/ghost/content
+      ports:
+        - 3002:2368
+      restart: unless-stopped
+  #node-red:
+  #    image: nodered/node-red:latest
+  #    container_name: nodered
+  #    environment:
+  #      - TZ=Europe/London
+  #      - PUID=1000
+  #      - PGID=1000
+  #    ports:
+  #      - "1880:1880"
+  #    volumes:
+  #      - /home/pi/docker-volumes/nodered:/data
+  #    restart: unless-stopped

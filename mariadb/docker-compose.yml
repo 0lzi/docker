@@ -1,0 +1,14 @@
+version: "2"
+services:
+  mariadb:
+    image: linuxserver/mariadb
+    container_name: mariadb
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - MYSQL_ROOT_PASSWORD="${MYSQL_ROOT_PASSWORD}"
+      - TZ=Europe/London
+    volumes:
+      - /home/pi/docker-volumes/mariadb:/config
+    restart: unless-stopped
+  
