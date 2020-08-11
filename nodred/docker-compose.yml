@@ -1,24 +1,14 @@
-################################################################################
-# Node-RED Stack or Compose
-################################################################################
-# docker stack deploy node-red --compose-file docker-compose-node-red.yml
-# docker-compose -f docker-compose-node-red.yml -p myNoderedProject up
-################################################################################
-version: "3.7"
-
+version: "2"
 services:
-  node-red:
-    image: nodered/node-red:latest
-    environment:
-      - TZ=Europe/Amsterdam
-    ports:
-      - "1880:1880"
-    networks:
-      - node-red-net
-    volumes:
-      - node-red-data
-
-volumes:
-  node-red-data:
-
-networks:
+   node-red:
+     image: nodered/node-red:latest
+     container_name: nodered
+     environment:
+       - TZ=Europe/London
+       - PUID=1000
+       - PGID=1000
+     ports:
+       - "1880:1880"
+     volumes:
+        - /home/pi/docker-volumes/nodered:/data
+     restart: unless-stopped
