@@ -63,6 +63,8 @@ services:
       ports:
         - 3002:2368
       restart: unless-stopped
+  
+  # Moved this service to another Pi
   #node-red:
   #    image: nodered/node-red:latest
   #    container_name: nodered
