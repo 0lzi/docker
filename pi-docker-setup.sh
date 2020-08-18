@@ -14,9 +14,7 @@ sudo systemctl enable docker
 
 # Docker Compose setup
 
-sudo apt-get install libffi-dev libssl-dev
-
-sudo apt-get install -y python python-pip
+sudo apt-get install -y libffi-dev libssl-dev python3 python3-pip git
 
 sudo apt-get remove python-configparser -y
 
