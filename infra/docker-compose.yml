@@ -34,9 +34,9 @@ services:
         - PGID=1000
         - TZ=Europe/London
         - URL=0lzi.tk
-        - SUBDOMAINS=www,nextcloud,home,nodered
+        - SUBDOMAINS="${SUBDOMAINS}"
         - VALIDATION=http
-        - EXTRA_DOMAINS=olzi.tk,proofhut.co.uk,olinx.co.uk     
+        - EXTRA_DOMAINS="${EXTRA_DOMAINS}"     
     volumes:
         - /home/pi/docker-volumes/letsencrypt:/config
     ports:
