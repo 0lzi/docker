@@ -1,4 +1,4 @@
-version: "2"
+version: "2.1"
 services:
   nextcloud:
     image: linuxserver/nextcloud
@@ -62,6 +62,30 @@ services:
         - /home/pi/docker-volumes/olinx/content:/var/lib/ghost/content
       ports:
         - 3002:2368
+      restart: unless-stopped
+
+  wireguard:
+      image: linuxserver/wireguard
+      container_name: wireguard
+      cap_add:
+        - NET_ADMIN
+        - SYS_MODULE
+      environment:
+        - PUID=1000
+        - PGID=1000
+        - TZ=Europe/London
+        - SERVERURL="${SERVERURL}"
+        - SERVERPORT="${SERVERPORT}"
+        - PEERS=1
+        - PEERDNS="${PEERDNS}"
+        - INTERNAL_SUBNET="${INTERNAL_SUBNET}"
+      volumes:
+        - /home/pi/docker-volumes/wireguard/config:/config
+        - /lib/modules:/lib/modules
+      ports:
+        - 1988:1988/udp
+      sysctls:
+        - net.ipv4.conf.all.src_valid_mark=1
       restart: unless-stopped
   
   # Moved this service to another Pi
