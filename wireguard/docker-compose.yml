@@ -12,7 +12,7 @@ services:
       - TZ=Europe/London
       - SERVERURL=${SERVERURL}
       - SERVERPORT=${SERVERPORT}
-      - PEERS=1
+      - PEERS=2
       - PEERDNS=${PEERDNS}
       - INTERNAL_SUBNET=${INTERNAL_SUBNET}
     volumes:
