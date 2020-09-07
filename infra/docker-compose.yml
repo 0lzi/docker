@@ -43,26 +43,29 @@ services:
         - 443:443
         - 80:80
     restart: unless-stopped
-  ghost:
-      image: ghost
-      container_name: proofhut
-      environment:
-        - url=https://proofhut.co.uk
-      volumes:
-        - /home/pi/docker-volumes/ghost/content:/var/lib/ghost/content
-      ports:
-        - 3001:2368
-      restart: unless-stopped
-  ghost2:
-      image: ghost
-      container_name: olinx
-      environment:
-        - url=https://olinx.co.uk
-      volumes:
-        - /home/pi/docker-volumes/olinx/content:/var/lib/ghost/content
-      ports:
-        - 3002:2368
-      restart: unless-stopped
+#
+# migrated to RPi4
+# 
+#  ghost:
+#      image: ghost
+#      container_name: proofhut
+#      environment:
+#        - url=https://proofhut.co.uk
+#      volumes:
+#        - /home/pi/docker-volumes/ghost/content:/var/lib/ghost/content
+#      ports:
+#        - 3001:2368
+#      restart: unless-stopped
+#  ghost2:
+#      image: ghost
+#      container_name: olinx
+#      environment:
+#        - url=https://olinx.co.uk
+#      volumes:
+#        - /home/pi/docker-volumes/olinx/content:/var/lib/ghost/content
+#      ports:
+#        - 3002:2368
+#      restart: unless-stopped
 
   wireguard:
       image: linuxserver/wireguard
@@ -74,21 +77,22 @@ services:
         - PUID=1000
         - PGID=1000
         - TZ=Europe/London
-        - SERVERURL="${SERVERURL}"
-        - SERVERPORT="${SERVERPORT}"
-        - PEERS=1
-        - PEERDNS="${PEERDNS}"
-        - INTERNAL_SUBNET="${INTERNAL_SUBNET}"
+        - SERVERURL=${SERVERURL}
+        - SERVERPORT=${SERVERPORT}
+        - PEERS=2
+        - PEERDNS=${PEERDNS}
+        - INTERNAL_SUBNET=${INTERNAL_SUBNET}
       volumes:
         - /home/pi/docker-volumes/wireguard/config:/config
         - /lib/modules:/lib/modules
       ports:
-        - 1988:1988/udp
+        - 1988:51820/udp
       sysctls:
         - net.ipv4.conf.all.src_valid_mark=1
       restart: unless-stopped
   
-  # Moved this service to another Pi
+  # Migrated to RPi-4
+  #
   #node-red:
   #    image: nodered/node-red:latest
   #    container_name: nodered
