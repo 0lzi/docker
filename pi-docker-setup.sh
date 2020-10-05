@@ -18,6 +18,6 @@ sudo apt-get install -y libffi-dev libssl-dev python3 python3-pip git
 
 sudo apt-get remove python-configparser -y
 
-sudo pip install docker-compose
+sudo pip3 install docker-compose
 
 sudo reboot
