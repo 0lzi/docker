@@ -20,4 +20,14 @@ sudo apt-get remove python-configparser -y
 
 sudo pip3 install docker-compose
 
+# test docker 
+
+docker --version
+
+#create docker dir
+
+mkdir ~/docker
+
+mkdir ~/docker-volumes
+
 sudo reboot
