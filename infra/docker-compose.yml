@@ -8,8 +8,10 @@ services:
       - PGID=1000
       - TZ=Europe/London
     volumes:
-      - /home/pi/docker-volumes/nextcloud/config:/config
-      - /home/pi/docker-volumes/nextcloud/data:/data
+    #  - /home/pi/docker-volumes/nextcloud/config:/config
+    #  - /home/pi/docker-volumes/nextcloud/data:/data
+       - /media/nfs/docker-volumes/nextcloud/config:/config
+       - /media/nfs/docker-volumes/nextcloud/data:/data
     depends_on:
       - mariadb
     restart: unless-stopped
@@ -22,7 +24,8 @@ services:
       - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
       - TZ=Europe/London
     volumes:
-      - /home/pi/docker-volumes/mariadb:/config
+    #  - /home/pi/docker-volumes/mariadb:/config
+      - /media/nfs/mariadb:/config
     restart: unless-stopped
   letsencrypt:
     image: linuxserver/swag
@@ -38,7 +41,9 @@ services:
         - VALIDATION=http
         - EXTRA_DOMAINS=${EXTRA_DOMAINS}     
     volumes:
-        - /home/pi/docker-volumes/letsencrypt:/config
+      #  - /home/pi/docker-volumes/letsencrypt:/config
+        - /media/nfs/docker-volumes/swag:/config
+
     ports:
         - 443:443
         - 80:80
@@ -49,7 +54,8 @@ services:
       environment:
         - url=https://proofhut.co.uk
       volumes:
-        - /home/pi/docker-volumes/ghost/content:/var/lib/ghost/content
+      #  - /home/pi/docker-volumes/ghost/content:/var/lib/ghost/content
+        - /media/nfs/docker-volumes/ghost/content:/var/lib/ghost/content
       ports:
         - 3001:2368
       restart: unless-stopped
@@ -59,7 +65,8 @@ services:
       environment:
         - url=https://olinx.co.uk
       volumes:
-        - /home/pi/docker-volumes/olinx/content:/var/lib/ghost/content
+      #  - /home/pi/docker-volumes/olinx/content:/var/lib/ghost/content
+         - /media/nfs/docker-volumes/olinx/content:/var/lib/ghost/content
       ports:
         - 3002:2368
       restart: unless-stopped
@@ -80,7 +87,8 @@ services:
         - PEERDNS=${PEERDNS}
         - INTERNAL_SUBNET=${INTERNAL_SUBNET}
       volumes:
-        - /home/pi/docker-volumes/wireguard/config:/config
+      #  - /home/pi/docker-volumes/wireguard/config:/config
+        - /media/nfs/docker-volumes/wireguard/config:/config
         - /lib/modules:/lib/modules
       ports:
         - 1988:51820/udp
@@ -97,5 +105,6 @@ services:
       ports:
         - "1880:1880"
       volumes:
-        - /home/pi/docker-volumes/nodered:/data
+      #  - /home/pi/docker-volumes/nodered:/data
+        - /media/nfs/docker-volumes/nodered:/data
       restart: unless-stopped
