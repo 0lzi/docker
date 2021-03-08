@@ -1,0 +1,18 @@
+version: "3"
+services:
+  portainer:
+    image: portainer/portainer-ce
+    container_name: portainer
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /home/pi/docker-volumes/portainer/data:/data
+    #   - /media/nfs/docker-volumes/nextcloud/config:/config
+    #   - /media/nfs/docker-volumes/nextcloud/data:/data
+    ports:
+        - 8000:8000
+        - 9000:9000
+    restart: unless-stopped

@@ -7,6 +7,9 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London
+    ports:
+      - 80:80
+      - 443:443
     volumes:
       - /home/pi/docker-volumes/nextcloud/config:/config
       - /home/pi/docker-volumes/nextcloud/data:/data
@@ -19,28 +22,10 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - MYSQL_ROOT_PASSWORD=oB7g4rJEm7bNYi
+      - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
       - TZ=Europe/London
     volumes:
       - /home/pi/docker-volumes/mariadb:/config
     restart: unless-stopped
-  letsencrypt:
-    image: linuxserver/letsencrypt
-    container_name: letsencrypt
-    cap_add:
-        - NET_ADMIN
-    environment:
-        - PUID=1000
-        - PGID=1000
-        - TZ=Europe/London
-        - URL=0lzi.tk
-        - SUBDOMAINS=www,nextcloud,home
-        - VALIDATION=http
-        - EXTRA_DOMAINS=olzi.tk    
-    volumes:
-        - /home/pi/docker-volumes/letsencrypt:/config
-    ports:
-        - 443:443
-        - 80:80
-    restart: unless-stopped
+
 
