@@ -9,4 +9,6 @@ Repo for all my docker infra most of the compose is based of [LSIO](https://www.
 - [ ] Nextcloud
 - [ ] NodeRed
 - [ ] Wireguard
+- [ ] Portainer
+- [ ] Standardnotes - WIP
 

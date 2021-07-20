@@ -1,6 +1,6 @@
 version: "2"
 services:
-    docghost:
+  ghost:
     image: ghost
     container_name: olinx
     environment:
