@@ -41,4 +41,6 @@ services:
     container_name: redis
     volumes:
       - /home/netbox:/data
-    restart: unless-stopped
+    ports:
+      - 6379:6379
+      restart: unless-stopped
