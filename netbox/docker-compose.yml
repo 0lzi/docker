@@ -1,0 +1,44 @@
+version: "2.1"
+services:
+  netbox:
+    image: ghcr.io/linuxserver/netbox
+    container_name: netbox
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - SUPERUSER_EMAIL= na@na.com
+      - SUPERUSER_PASSWORD= Password
+      - ALLOWED_HOST= *
+      - DB_NAME= netbox
+      - DB_USER= netbox
+      - DB_PASSWORD= mysecretpassword
+      - DB_HOST= postgres
+      - DB_PORT= 5432
+      - REDIS_HOST= redis
+      - REDIS_PORT= 6379
+      - TZ= Europe/London
+    volumes:
+      - /home/netbox:/config
+    ports:
+      - 8000:8000
+    restart: unless-stopped
+  
+  postgres:
+    image: postgres
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=netbox
+      - POSTGRES_DB=netbox
+      - POSTGRES_PASSWORD=mysecretpassword
+    volumes:
+      - /home/netbox/postgres:/var/lib/postgresql/data
+    ports:
+      - 5432:5432/tcp
+    restart: unless-stopped
+ 
+  redis:
+    image: redis
+    container_name: redis
+    volumes:
+      - /home/netbox:/data
+    restart: unless-stopped
