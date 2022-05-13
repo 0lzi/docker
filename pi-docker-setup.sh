@@ -12,17 +12,19 @@ sudo usermod -aG docker $USER
 
 sudo systemctl enable docker
 
+# docker-compose is build in to new docker engine
 # Docker Compose setup
 
-sudo apt-get install -y libffi-dev libssl-dev python3 python3-pip git
+#sudo apt-get install -y libffi-dev libssl-dev python3 python3-pip git
 
-sudo apt-get remove python-configparser -y
+#sudo apt-get remove python-configparser -y
 
-sudo pip3 install docker-compose
+# sudo pip3 install docker-compose
 
 # test docker 
 
 docker --version
+docker compose version
 
 #create docker dir
 
