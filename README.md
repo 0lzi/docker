@@ -6,7 +6,12 @@ Repo for all my docker infra most of the compose is based of [LSIO](https://www.
 - [ ] Ghost
 - [ ] Letsecrypt
 - [ ] Mariadb
+- [ ] Matrix
 - [ ] Nextcloud
+- [ ] Portainer
+- [ ] Standardnotes - WIP
 - [ ] NodeRed
 - [ ] Wireguard
+
+
 
