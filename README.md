@@ -4,12 +4,19 @@ Repo for all my docker infra most of the compose is based of [LSIO](https://www.
 ## Current
 
 - [ ] Ghost
+- [ ] Grafana
+- [ ] Inlfuxdb
 - [ ] Letsecrypt
 - [ ] Mariadb
+- [ ] Matrix
 - [ ] Nextcloud
+- [ ] Portainer
+- [ ] Standardnotes - WIP
 - [ ] NodeRed
 - [ ] Pi-Hole
 - [ ] Wireguard
 - [ ] Portainer
 - [ ] Standardnotes - WIP
+
+
 
