@@ -1,0 +1,12 @@
+version: "3"
+services:
+  matrix:
+      image: matrixdotorg/synapse:latest
+      container_name: matrix
+      
+      volumes:
+        - /home/pi/docker-volumes/matrix:/data
+      ports:
+        - 8008:8008
+
+      restart: unless-stopped
