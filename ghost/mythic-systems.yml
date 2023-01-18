@@ -6,7 +6,7 @@ services:
    environment:
      - url=mythic.systems
    volumes:
-     - /home/pi/docker-volumes/mythic-systems/content:/var/lib/ghost/content
+     - /home/pi/nfsdocker-volumes/mythic-systems/content:/var/lib/ghost/content
    ports:
      - 3003:2368
    restart: unless-stopped

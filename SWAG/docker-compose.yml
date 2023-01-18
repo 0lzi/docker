@@ -16,7 +16,7 @@ services:
       - VALIDATION=http
       - EXTRA_DOMAINS=${EXTRA_DOMAINS}
     volumes:
-      - /home/pi/docker-volumes/letsencrypt:/config
+      - /home/pi/nfsdocker-volumes/letsencrypt:/config
     ports:
       - 443:443
       - 80:80

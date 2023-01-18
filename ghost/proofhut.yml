@@ -6,7 +6,7 @@ services:
     environment:
       - url=https://proofhut.co.uk
     volumes:
-      - /home/pi/docker-volumes/ghost/content:/var/lib/ghost/content
+      - /home/pi/nfsdocker-volumes/ghost/content:/var/lib/ghost/content
     ports:
       - 3001:2368
     restart: unless-stopped

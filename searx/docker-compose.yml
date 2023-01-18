@@ -8,6 +8,6 @@ services:
       - BASE_URL=http://localhost:8080
       - INSTANCE_NAME=searxng
     volumes:
-      - /home/pi/docker-volumes/searx:/etc/searxng
+      - /home/pi/nfsdocker-volumes/searx:/etc/searxng
     ports:
       - 8081:8080

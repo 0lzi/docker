@@ -9,6 +9,6 @@ services:
       - MYSQL_ROOT_PASSWORD="${MYSQL_ROOT_PASSWORD}"
       - TZ=Europe/London
     volumes:
-      - /home/pi/docker-volumes/mariadb:/config
+      - /home/pi/nfsdocker-volumes/mariadb:/config
     restart: unless-stopped
   

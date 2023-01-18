@@ -10,7 +10,7 @@ services:
       - CAP_HOST_MANAGEMENT=1 
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /home/pi/docker-volumes/portainer_agent:/var/lib/docker/volumes
+      - /home/pi/nfsdocker-volumes/portainer_agent:/var/lib/docker/volumes
       - /:/host 
-      - /home/pi/docker-volumes/portainer_agent:/data 
+      - /home/pi/nfsdocker-volumes/portainer_agent:/data 
     restart: unless-stopped

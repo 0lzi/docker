@@ -6,7 +6,7 @@ services:
     environment:
       - url=https://olinx.co.uk
     volumes:
-      - /home/pi/docker-volumes/olinx/content:/var/lib/ghost/content
+      - /home/pi/nfsdocker-volumes/olinx/content:/var/lib/ghost/content
     ports:
       - 3002:2368
     restart: unless-stopped

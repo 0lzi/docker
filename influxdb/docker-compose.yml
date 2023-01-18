@@ -11,8 +11,8 @@ services:
     ports:
     - 8086:8086
     volumes:
-    - /home/pi/docker-volumes/influxdb:/var/lib/influxdb2
-    - /home/pi/docker-volumes/influxdb/ssl:/etc/ssl/
+    - /home/pi/nfsdocker-volumes/influxdb:/var/lib/influxdb2
+    - /home/pi/nfsdocker-volumes/influxdb/ssl:/etc/ssl/
     restart: unless-stopped
 
 

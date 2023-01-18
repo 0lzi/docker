@@ -10,5 +10,5 @@ services:
      ports:
        - "1880:1880"
      volumes:
-        - /home/pi/docker-volumes/nodered:/data
+        - /home/pi/nfsdocker-volumes/nodered:/data
      restart: unless-stopped

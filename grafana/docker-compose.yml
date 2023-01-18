@@ -10,7 +10,7 @@ services:
     ports:
     - 3000:3000
     volumes:
-    - /home/pi/docker-volumes/grafana:/var/lib/grafana
+    - /home/pi/nfsdocker-volumes/grafana:/var/lib/grafana
     restart: unless-stopped
 
 
