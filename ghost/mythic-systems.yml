@@ -1,0 +1,12 @@
+version: "2"
+services:
+  ghost:
+   image: ghost
+   container_name: mythic-systems
+   environment:
+     - url=mythic.systems
+   volumes:
+     - /home/pi/docker-volumes/mythic-systems/content:/var/lib/ghost/content
+   ports:
+     - 3003:2368
+   restart: unless-stopped
