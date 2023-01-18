@@ -11,7 +11,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
-    - name: Run action
-      uses: jacobtomlinson/gha-lint-yaml@master
-      with:
-        path: .
+    - name: Install yamllint
+      run: |
+        apt-get update
+        apt-get install -y yamllint
+    - name: Lint YAML files
+      run: |
+        yamllint -c .yamllint.yml '**/*.yml'
