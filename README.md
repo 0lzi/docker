@@ -9,14 +9,17 @@ Repo for all my docker infra most of the compose is based of [LSIO](https://www.
 - [ ] Letsecrypt
 - [ ] Mariadb
 - [ ] Matrix
+- [ ] Netbox
 - [ ] Nextcloud
+- [ ] Nodered
+- [ ] Pi Hole
 - [ ] Portainer
 - [ ] Standardnotes - WIP
-- [ ] NodeRed
-- [ ] Pi-Hole
+- [ ] Searx
+- [ ] Standardnotes - WIP
+- [ ] Uptime Kuma
 - [ ] Wireguard
-- [ ] Portainer
-- [ ] Standardnotes - WIP
+
 
 
 
