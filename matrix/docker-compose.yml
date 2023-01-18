@@ -7,7 +7,8 @@ services:
         - SYNAPSE_SERVER_NAME=matrix.0lzi.tk
         - SYNAPSE_REPORT_STATS=yes
       volumes:
-        - /home/pi/nfsdocker-volumes/matrix:/data
+        - /home/pi/docker-volumes/matrix:/data
+      # file permission error on nfs
       ports:
         - 8008:8008
 
