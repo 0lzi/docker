@@ -13,9 +13,9 @@ jobs:
     - uses: actions/checkout@master
     - name: Install yamllint
       run: |
-        apt-get clean
-        apt-get update
-        apt-get install -y yamllint
+        sudo apt-get clean
+        sudo apt-get update
+        sudo apt-get install -y yamllint
     - name: Lint YAML files
       run: |
         yamllint -c .yamllint.yml '**/*.yml'
