@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Lint YAML files
-      uses: adeshpande3/yaml-lint-action@main
+    - uses: actions/checkout@master
+    - name: Run action
+      uses: jacobtomlinson/gha-lint-yaml@master
       with:
-        args: -c .yamllint.yml '**/*.yml'
+        path: path/to/my/yaml/file.yaml
