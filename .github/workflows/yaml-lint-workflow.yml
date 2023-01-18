@@ -14,4 +14,4 @@ jobs:
     - name: Run action
       uses: jacobtomlinson/gha-lint-yaml@master
       with:
-        path: path/to/my/yaml/file.yaml
+        path: .
