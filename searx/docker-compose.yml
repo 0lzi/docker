@@ -1,0 +1,13 @@
+version: '3'
+services:
+  searxng:
+    container_name: searxng
+    image: searxng/searxng
+    restart: unless-stopped
+    environment:
+      - BASE_URL=http://localhost:8080
+      - INSTANCE_NAME=searxng
+    volumes:
+      - /home/pi/docker-volumes/searx:/etc/searxng
+    ports:
+      - 8081:8080
