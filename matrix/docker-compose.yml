@@ -3,7 +3,9 @@ services:
   matrix:
       image: matrixdotorg/synapse:latest
       container_name: matrix
-      
+      environment:
+        - SYNAPSE_SERVER_NAME=matrix.0lzi.tk
+        - SYNAPSE_REPORT_STATS=yes
       volumes:
         - /home/pi/docker-volumes/matrix:/data
       ports:
