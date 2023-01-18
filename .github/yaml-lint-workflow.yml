@@ -1,0 +1,17 @@
+name: Lint
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Lint YAML files
+      uses: adeshpande3/yaml-lint-action@main
+      with:
+        args: -c .yamllint.yml '**/*.yml'
