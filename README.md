@@ -10,7 +10,6 @@ Repo for all my docker infra most of the compose is based of [LSIO](https://www.
     - 3DNP
 - [ ] Grafana
 - [x] Inlfuxdb
-- [ ] Letsecrypt
 - [ ] Mariadb
 - [ ] Matrix
 - [ ] Netbox
