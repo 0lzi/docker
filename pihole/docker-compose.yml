@@ -1,4 +1,4 @@
-version: "2"
+version: "3.9"
 
 # https://github.com/pi-hole/docker-pi-hole/blob/master/README.md
 
@@ -22,5 +22,5 @@ services:
       - '/home/pi/nfsdocker-volumes/etc-dnsmasq.d:/etc/dnsmasq.d'
     #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
     cap_add:
-      - NET_ADMIN
-    restart: unless-stopped # Recommended but not required (DHCP needs NET_ADMIN)  
+      - NET_ADMIN # Recommended but not required (DHCP needs NET_ADMIN) 
+    restart: unless-stopped  

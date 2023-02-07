@@ -1,4 +1,4 @@
-version: "2"
+version: "3.9"
 services:
   ghost:
    image: ghost
@@ -9,4 +9,4 @@ services:
      - /home/pi/nfsdocker-volumes/mythic-systems/content:/var/lib/ghost/content
    ports:
      - 3003:2368
-   restart: unless-stopped
+  restart: unless-stopped
