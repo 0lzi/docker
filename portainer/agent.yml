@@ -1,13 +1,14 @@
 version: "3"
 services:
   portainer:
-    image: portainer/agent
+    image: portainer/agent:2.16.2
     container_name: portainer_agent
     environment:
       - EDGE=1 
-      - EDGE_ID=$EDGE_ID
-      - EDGE_KEY=$EDGE_KEY
+      - EDGE_ID=$EDGE_ID5
+      - EDGE_KEY=$EDGE_KEY5
       - CAP_HOST_MANAGEMENT=1 
+      - EDGE_INSECURE_POLL=1
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /home/pi/nfsdocker-volumes/portainer_agent:/var/lib/docker/volumes
