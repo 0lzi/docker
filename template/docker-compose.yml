@@ -4,6 +4,8 @@ services:
   servicename:
     image: repo/image:tag
     container_name: containername
+    environment:
+      - some_env_var=somevalue
     volumes:
       - /home/pi/nfsdocker-volumes/servicename:/<path>
     ports:
