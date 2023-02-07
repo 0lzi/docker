@@ -7,5 +7,5 @@ services:
     volumes:
       - /home/pi/nfsdocker-volumes/servicename:/<path>
     ports:
-      -   # <Host Port>:<Container Port>
+      -  80:80 # <Host Port>:<Container Port>
     restart: always
