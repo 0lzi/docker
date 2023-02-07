@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  servicename:
+    image: repo/image:tag
+    container_name: containername
+    volumes:
+      - /home/pi/nfsdocker-volumes/servicename:/<path>
+    ports:
+      -   # <Host Port>:<Container Port>
+    restart: always
