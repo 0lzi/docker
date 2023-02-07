@@ -1,23 +1,25 @@
-version: "2"
+version: "3.9"
 services:
-  letsencrypt:
+  swag:
     image: linuxserver/swag
     container_name: swag
     cap_add:
-      - NET_ADMIN
-    networks:
-      - lsio
+        - NET_ADMIN
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/London
-      - URL=0lzi.tk
-      - SUBDOMAINS=${SUBDOMAINS}
-      - VALIDATION=http
-      - EXTRA_DOMAINS=${EXTRA_DOMAINS}
+        - DOCKER_MODS=linuxserver/mods:swag-dashboard
+        - PUID=1000
+        - PGID=1000
+        - TZ=Europe/London
+        - URL=${URL}
+        - SUBDOMAINS=${SUBDOMAINS}
+        - VALIDATION=${VALIDATION}
+        - EXTRA_DOMAINS=${EXTRA_DOMAINS}
     volumes:
-      - /home/pi/nfsdocker-volumes/letsencrypt:/config
+      #  - /home/pi/docker-volumes/swag:/config
+        - /home/pi/nfsdocker-volumes/swag:/config
+
     ports:
-      - 443:443
-      - 80:80
+        - 443:443
+        - 80:80
+        - 81:81
     restart: unless-stopped
