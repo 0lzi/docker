@@ -5,7 +5,7 @@ services:
     image: repo/image:tag
     container_name: containername
     environment:
-      - some_env_var=somevalue
+      - some_env_var=${some_env_var}
     volumes:
       - /home/pi/nfsdocker-volumes/servicename:/<path>
     ports:
