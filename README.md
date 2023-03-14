@@ -4,7 +4,7 @@ Repo for all my docker infra most of the compose is based of [LSIO](https://www.
 ### NFS Migration
 
 - [ ] Ghost
-    - mythic-systems
+    - [x] mythic-systems
     - olinx
     - modeprojects
     - [x] 3DNP 
