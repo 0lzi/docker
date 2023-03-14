@@ -11,8 +11,8 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - /home/pi/docker-volumes/nextcloud/config:/config
-      - /home/pi/docker-volumes/nextcloud/data:/data
+      - /home/pi/nfsdocker-volumes/nextcloud/config:/config
+      - /home/pi/nfsdocker-volumes/nextcloud/data:/data
     depends_on:
       - mariadb
     restart: unless-stopped
@@ -27,5 +27,3 @@ services:
     volumes:
       - /home/pi/nfsdocker-volumes/mariadb:/config
     restart: unless-stopped
-
-

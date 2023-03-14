@@ -1,10 +1,17 @@
 version: "3.9"
 services:
   ghost:
-    image: ghost
+    image: ghost:4.48.7
     container_name: proofhut
     environment:
       - url=https://proofhut.co.uk
+      - mail__transport="SMTP" 
+      - mail__from=${MAIL_FROM}
+      - mail__options__service="SMTP" 
+      - mail__options__host=${MAIL_SERVICE}
+      - mail__options__port="587" 
+      - mail__options__auth__user=${MAIL_AUTH}
+      - mail__options__auth__pass=${MAIL_AUTH_PASS}
     volumes:
       - /home/pi/nfsdocker-volumes/ghost/content:/var/lib/ghost/content
     ports:

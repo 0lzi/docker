@@ -19,7 +19,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - TZ=Europe/London
     volumes:
       - /home/pi/nfsdocker-volumes/mariadb:/config

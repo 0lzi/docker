@@ -7,13 +7,13 @@ Repo for all my docker infra most of the compose is based of [LSIO](https://www.
     - mythic-systems
     - olinx
     - modeprojects
-    - 3DNP
+    - [x] 3DNP 
 - [ ] Grafana
 - [x] Inlfuxdb
-- [ ] Mariadb
+- [x] Mariadb
 - [ ] Matrix
 - [ ] Netbox
-- [ ] Nextcloud
+- [x] Nextcloud
 - [ ] Nodered
 - [ ] Pi Hole
 - [ ] Portainer
