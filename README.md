@@ -11,14 +11,10 @@ Repo for all my docker infra most of the compose is based of [LSIO](https://www.
 - [ ] Grafana
 - [x] Inlfuxdb
 - [x] Mariadb
-- [ ] Matrix
 - [ ] Netbox
 - [x] Nextcloud
-- [ ] Nodered
-- [ ] Pi Hole
+- [x] Pi Hole
 - [ ] Portainer
-- [ ] Searx
-- [ ] Standardnotes - WIP
 - [x] SWAG
 - [x] Uptime Kuma
 - [x] Wireguard
