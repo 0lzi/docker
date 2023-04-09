@@ -2,10 +2,10 @@
 #Script to update nextcloud LSIO Image and Nextcloud Version
 
 echo "Pulling New LSIO images"
-docker-compose pull
+docker compose pull
 
 echo "Complete, updating containers"
-docker-compose up -d
+docker compose up -d
 
 echo "Containers running, pruning old images"
 docker image prune
