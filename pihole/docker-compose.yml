@@ -3,6 +3,7 @@ version: "3.9"
 # https://github.com/pi-hole/docker-pi-hole/blob/master/README.md
 
 services:
+  # docker compose --profile pihole up -d
   pihole:
     container_name: pihole
     image: pihole/pihole:latest
@@ -23,4 +24,31 @@ services:
     #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
     cap_add:
       - NET_ADMIN # Recommended but not required (DHCP needs NET_ADMIN) 
-    restart: unless-stopped  
+    restart: unless-stopped
+    profiles:
+      - pihole
+  
+  # docker compose --profile pihole2 up -d
+  pihole2:
+  container_name: pihole2
+  image: pihole/pihole:latest
+  # For DHCP it is recommended to remove these ports and instead add: network_mode: "host"
+  network_mode: "host"
+  #ports:
+  #  - "53:53/tcp"
+  #  - "53:53/udp"
+  #  - "67:67/udp"
+  #  - "80:80/tcp"
+  environment:
+    TZ: 'Europe/London'
+    WEBPASSWORD: $PIHOLE_PASSWORD
+  # Volumes store your data between container upgrades
+  volumes:
+    - '/home/pi/nfsdocker-volumes/pihole2/etc-pihole:/etc/pihole'
+    - '/home/pi/nfsdocker-volumes/pihole2/etc-dnsmasq.d:/etc/dnsmasq.d'
+  #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
+  cap_add:
+    - NET_ADMIN # Recommended but not required (DHCP needs NET_ADMIN) 
+  restart: unless-stopped
+  profiles:
+    - pihole2
