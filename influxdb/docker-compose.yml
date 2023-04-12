@@ -13,7 +13,6 @@ services:
     volumes:
     - /home/pi/nfsdocker-volumes/influxdb:/var/lib/influxdb2
     - /home/pi/nfsdocker-volumes/influxdb/ssl:/etc/ssl/
-    - /home/pi/nfsdocker-volumes/influxdb/data:/var/lib/influxdb2
     restart: unless-stopped
 
 
