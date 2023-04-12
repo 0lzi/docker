@@ -3,7 +3,7 @@ version: "3.9"
 services:
   influxdb:
     container_name: influxdb
-    image: influxdb:2.0.9
+    image: influxdb:latest
     environment:
     - INFLUXDB_HTTP_HTTPS_ENABLED=true
     - INFLUXDB_HTTP_HTTPS_CERTIFICATE=/etc/ssl/certificate.pem
@@ -13,6 +13,7 @@ services:
     volumes:
     - /home/pi/nfsdocker-volumes/influxdb:/var/lib/influxdb2
     - /home/pi/nfsdocker-volumes/influxdb/ssl:/etc/ssl/
+    - /home/pi/nfsdocker-volumes/influxdb/data:/var/lib/influxdb2
     restart: unless-stopped
 
 
