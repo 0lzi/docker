@@ -6,7 +6,7 @@ services:
     cap_add:
         - NET_ADMIN
     environment:
-        - DOCKER_MODS=linuxserver/mods:swag-dashboard
+        - DOCKER_MODS=linuxserver/mods:swag-dashboard|linuxserver/mods:swag-auto-reload
         - PUID=1000
         - PGID=1000
         - TZ=Europe/London
