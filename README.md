@@ -5,16 +5,16 @@ Repo for all my docker infra most of the compose is based of [LSIO](https://www.
 
 - [ ] Ghost
     - [x] mythic-systems
-    - olinx
-    - modeprojects
+    - [x] olinx
+    - [ ] modeprojects
     - [x] 3DNP 
 - [ ] Grafana
-- [x] Inlfuxdb
+- [ ] Inlfuxdb
+- [ ] Octopus energy API
 - [x] Mariadb
-- [ ] Netbox
 - [x] Nextcloud
 - [x] Pi Hole
-- [ ] Portainer
+- [x] Portainer
 - [x] SWAG
 - [x] Uptime Kuma
 - [x] Wireguard
