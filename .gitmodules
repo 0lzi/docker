@@ -1,0 +1,3 @@
+[submodule "octopusenergy-consumption-metrics"]
+	path = octopusenergy-consumption-metrics
+	url = git@github.com:0lzi/octopusenergy-consumption-metrics.git
