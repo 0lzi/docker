@@ -15,5 +15,5 @@ services:
     volumes:
       - /home/pi/nfsdocker-volumes/fitness-blog/content:/var/lib/ghost/content
     ports:
-      - 3003:2368
+      - 3004:2368
     restart: unless-stopped
