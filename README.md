@@ -8,9 +8,10 @@ Repo for all my docker infra most of the compose is based of [LSIO](https://www.
     - [x] olinx
     - [ ] modeprojects
     - [x] 3DNP 
-- [ ] Grafana
-- [ ] Inlfuxdb
-- [ ] Octopus energy API
+    - [x] fitness-blog
+- [x] Grafana
+- [x] Inlfuxdb
+- [x] Octopus energy API
 - [x] Mariadb
 - [x] Nextcloud
 - [x] Pi Hole
