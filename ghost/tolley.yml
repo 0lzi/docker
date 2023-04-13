@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   ghost:
-    image: ghost:4.48.7
+    image: ghost:4.48.8
     container_name: tolley
     environment:
       - url=https://3dnorthwichprintables.co.uk
