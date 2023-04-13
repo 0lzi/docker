@@ -11,7 +11,7 @@ services:
     - 3000:3000
     volumes:
     - /home/pi/nfsdocker-volumes/grafana:/var/lib/grafana
-    user: '104'
+    user: '1000' # Pi userid
     restart: unless-stopped
 
 
