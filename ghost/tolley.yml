@@ -4,7 +4,7 @@ services:
     image: ghost:4.48.8
     container_name: tolley
     environment:
-      - url=https://3dnorthwichprintables.co.uk
+      - url={{URL_3D}}
     volumes:
       - /home/pi/nfsdocker-volumes/tolley/content:/var/lib/ghost/content
     ports:
