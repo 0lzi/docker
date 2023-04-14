@@ -4,7 +4,7 @@ services:
     image: ghost:4.48.8
     container_name: fitness-blog
     environment:
-      - url={{URL_FIT}}
+      - url=${{URL_FIT}}
       - mail__transport="SMTP" 
       - mail__from=${FITNESS_MAIL_FROM}
       - mail__options__service="SMTP" 

@@ -4,7 +4,7 @@ services:
     image: ghost:4.48.8
     container_name: olinx
     environment:
-      - url={{URL_OX}}
+      - url=${{URL_OX}}
       - mail__transport="SMTP" 
       - mail__from=${OLINX_MAIL_FROM}
       - mail__options__service="SMTP" 
