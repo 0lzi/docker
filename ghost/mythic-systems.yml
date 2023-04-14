@@ -1,6 +1,6 @@
 version: "3.9"
 services:
-  ghost:
+  mythic-systems:
     image: ghost:4.48.8
     container_name: mythic-systems
     environment:
