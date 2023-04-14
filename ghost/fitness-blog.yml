@@ -1,4 +1,5 @@
 version: "3.9"
+name: fitness-blog
 services:
   fitness-blog:
     image: ghost:4.48.8

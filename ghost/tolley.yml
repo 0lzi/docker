@@ -1,4 +1,5 @@
 version: "3.9"
+name: tolley
 services:
   tolley:
     image: ghost:4.48.8

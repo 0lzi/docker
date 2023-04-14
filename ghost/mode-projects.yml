@@ -1,4 +1,5 @@
 version: "3.9"
+name: mode-projects
 services:
   mode-projects:
     image: ghost:4.48.8

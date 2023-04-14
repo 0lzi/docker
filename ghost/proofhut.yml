@@ -1,4 +1,5 @@
 version: "3.9"
+name: proofhut
 services:
   proofhut:
     image: ghost:4.48.8

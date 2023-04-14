@@ -1,4 +1,5 @@
 version: "3.9"
+name: olinx
 services:
   olinx:
     image: ghost:4.48.8

@@ -1,4 +1,5 @@
 version: "3.9"
+name: mythic-systems
 services:
   mythic-systems:
     image: ghost:4.48.8
