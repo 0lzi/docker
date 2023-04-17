@@ -11,8 +11,8 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - /home/pi/nfsdocker-volumes/nextcloud/config:/config
-      - /home/pi/nfsdocker-volumes/nextcloud/data:/data
+      - /home/pi/nfsdocker-volumes/nextcloud-new/config:/config
+      - /home/pi/nfsdocker-volumes/nextcloud-new/data:/data
     depends_on:
       - mariadb
     restart: unless-stopped
@@ -25,5 +25,5 @@ services:
       - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
       - TZ=Europe/London
     volumes:
-      - /home/pi/nfsdocker-volumes/mariadb:/config
+      - /home/pi/nfsdocker-volumes/mariadb-new:/config
     restart: unless-stopped
