@@ -2,12 +2,12 @@
 version: "3.9"
 services:
   portainer:
-    image: portainer/agent:2.16.2
+    image: portainer/agent:2.17.1
     container_name: portainer_agent
     environment:
       - EDGE=1 
-      - EDGE_ID=$EDGE_ID5
-      - EDGE_KEY=$EDGE_KEY5
+      - EDGE_ID=$EDGE_ID2
+      - EDGE_KEY=$EDGE_KEY2
       - CAP_HOST_MANAGEMENT=1 
       - EDGE_INSECURE_POLL=1
     volumes:
