@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  ghost:
+    image: ghost:4.48.8
+    container_name: ghost
+    environment:
+      - url=${URL_BLOG}
+    volumes:
+      - /home/user/docker-volumes/ghost/content:/var/lib/ghost/content
+    ports:
+      - 2368:2368
+    restart: unless-stopped
+
+  letsencrypt:
+    image: linuxserver/swag
+    container_name: swag
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - URL=${SWAG_URL}
+      - VALIDATION=http
+    volumes:
+      - /home/user/docker-volumes/swag:/config
+    ports:
+      - 443:443
+      - 80:80
+    restart: unless-stopped
