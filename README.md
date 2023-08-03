@@ -34,7 +34,6 @@ Repo for all my docker infra most of the compose is based of [LSIO](https://www.
 - Pi Hole
 - Portainer
 - Searx
-- Standardnotes - WIP
 - SWAG
 - Uptime Kuma
 - Wireguard
