@@ -23,7 +23,8 @@ services:
       - '/home/pi/nfsdocker-volumes/pihole/etc-pihole:/etc/pihole'
       - '/home/pi/nfsdocker-volumes/pihole/etc-dnsmasq.d:/etc/dnsmasq.d'
     #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
-    cap_add: NET_ADMIN # Recommended but not required (DHCP needs NET_ADMIN) 
+    cap_add: 
+      - NET_ADMIN # Recommended but not required (DHCP needs NET_ADMIN) 
     restart: unless-stopped
     profiles:
       - pihole
@@ -47,7 +48,8 @@ services:
     - '/home/pi/nfsdocker-volumes/pihole2/etc-pihole:/etc/pihole'
     - '/home/pi/nfsdocker-volumes/pihole2/etc-dnsmasq.d:/etc/dnsmasq.d'
   #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
-  cap_add: NET_ADMIN # Recommended but not required (DHCP needs NET_ADMIN) 
+  cap_add: 
+    - NET_ADMIN # Recommended but not required (DHCP needs NET_ADMIN) 
   restart: unless-stopped
   profiles:
     - pihole2
