@@ -1,0 +1,21 @@
+---
+version: "3.9"
+name: what-supp-blog
+services:
+  what-supp-blog:
+    image: ghost:4.48.8
+    container_name: what-supp-blog
+    environment:
+      - url=${URL_WS}
+      - mail__transport="SMTP" 
+      - mail__from=${WS_MAIL_FROM}
+      - mail__options__service="SMTP" 
+      - mail__options__host=${MAIL_HOST}
+      - mail__options__port="587" 
+      - mail__options__auth__user=${MAIL_AUTH}
+      - mail__options__auth__pass=${MAIL_AUTH_PASS}
+    volumes:
+      - /home/pi/nfsdocker-volumes/what-supp-blog/content:/var/lib/ghost/content
+    ports:
+      - 3007:2368
+    restart: unless-stopped
