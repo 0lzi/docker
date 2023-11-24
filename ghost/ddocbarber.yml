@@ -15,7 +15,7 @@ services:
       - mail__options__auth__user=${MAIL_AUTH}
       - mail__options__auth__pass=${MAIL_AUTH_PASS}
     volumes:
-      - /home/pi/nfsdocker-volumes/demosite/content:/var/lib/ghost/content
+      - /home/pi/nfsdocker-volumes/ddocbarber/content:/var/lib/ghost/content
     ports:
       - 3009:2368
     restart: unless-stopped
