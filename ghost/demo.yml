@@ -6,9 +6,9 @@ services:
     image: ghost:4.48.8
     container_name: demosite
     environment:
-      - url=${URL_WS}
+      - url=${URL_DEMO}
       - mail__transport="SMTP" 
-      - mail__from=${WS_MAIL_FROM}
+      - mail__from=${DEMO_MAIL_FROM}
       - mail__options__service="SMTP" 
       - mail__options__host=${MAIL_HOST}
       - mail__options__port="587" 
