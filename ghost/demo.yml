@@ -2,7 +2,7 @@
 version: "3.9"
 name: demosite
 services:
-  what-supp-blog:
+  demo-blog:
     image: ghost:4.48.8
     container_name: demosite
     environment:
