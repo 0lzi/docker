@@ -1,12 +1,20 @@
-version: "3.9"
+---
+version: "2"
 services:
   ghost:
     image: ghost:4.48.8
     container_name: ghost
     environment:
-      - url=${URL_BLOG}
+      - url=https://blog.0lzi.com
+      - mail__transport="SMTP"
+      - mail__from=${GHOST_MAIL_FROM}
+      - mail__options__service="SMTP"
+      - mail__options__host=${MAIL_HOST}
+      - mail__options__port="587"
+      - mail__options__auth__user=${MAIL_AUTH}
+      - mail__options__auth__pass=${MAIL_AUTH_PASS}
     volumes:
-      - /home/user/docker-volumes/ghost/content:/var/lib/ghost/content
+      - /home/kellyo/docker-volumes/ghost/content:/var/lib/ghost/content
     ports:
       - 2368:2368
     restart: unless-stopped
