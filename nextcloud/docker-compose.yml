@@ -2,23 +2,25 @@
 version: "3.9"
 services:
   nextcloud:
-    image: linuxserver/nextcloud
+    image: linuxserver/nextcloud:29.0.0
     container_name: nextcloud
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London
     ports:
-      - 80:80
-      - 443:443
+      - 8080:80
+      - 8443:443
     volumes:
-      - /home/pi/nfsdocker-volumes/nextcloud-new/config:/config
-      - /home/pi/nfsdocker-volumes/nextcloud-new/data:/data
+      - /home/oli/nfsdocker-volumes/nextcloud-new/config:/config
+      - /home/oli/nfsdocker-volumes/nextcloud-new/data:/data
+        #- /home/pi/nfsdocker-volumes/nextcloud-new/config:/config
+        #- /home/pi/nfsdocker-volumes/nextcloud-new/data:/data
     depends_on:
       - mariadb
     restart: unless-stopped
   mariadb:
-    image: linuxserver/mariadb
+    image: linuxserver/mariadb:10.11.6
     container_name: mariadb
     environment:
       - PUID=1000
@@ -29,5 +31,6 @@ services:
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
     volumes:
-      - /home/pi/nfsdocker-volumes/mariadb-new:/config
+      - /home/oli/nfsdocker-volumes/mariadb-new:/config
+        #- /home/pi/nfsdocker-volumes/mariadb-new:/config
     restart: unless-stopped

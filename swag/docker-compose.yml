@@ -17,7 +17,8 @@ services:
         - EXTRA_DOMAINS=${EXTRA_DOMAINS}
     volumes:
       #  - /home/pi/docker-volumes/swag:/config
-        - /home/pi/nfsdocker-volumes/swag:/config
+      #  - /home/pi/nfsdocker-volumes/swag:/config
+        - /home/oli/nfsdocker-volumes/swag:/config
 
     ports:
         - 443:443

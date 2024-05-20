@@ -17,7 +17,8 @@ services:
       - PEERDNS=${PEERDNS}
       - INTERNAL_SUBNET=${INTERNAL_SUBNET}
     volumes:
-      - /home/pi/nfsdocker-volumes/wireguard/config:/config
+      - /home/oli/nfsdocker-volumes/wireguard/config:/config
+        #- /home/pi/nfsdocker-volumes/wireguard/config:/config
       - /lib/modules:/lib/modules
     ports:
       - 1988:51820/udp

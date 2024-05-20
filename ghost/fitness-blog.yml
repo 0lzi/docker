@@ -15,7 +15,8 @@ services:
       - mail__options__auth__user=${MAIL_AUTH}
       - mail__options__auth__pass=${MAIL_AUTH_PASS}
     volumes:
-      - /home/pi/nfsdocker-volumes/fitness-blog/content:/var/lib/ghost/content
+      - /home/oli/nfsdocker-volumes/fitness-blog/content:/var/lib/ghost/content
+        #- /home/pi/nfsdocker-volumes/fitness-blog/content:/var/lib/ghost/content
     ports:
       - 3005:2368
     restart: unless-stopped

@@ -3,7 +3,7 @@ version: "3"
 
 # More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
 services:
-  # docker compose --profile pihole2 up -d
+  # docker compose --profile pihole up -d
   pihole:
     container_name: pihole
     image: pihole/pihole:latest

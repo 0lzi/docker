@@ -8,7 +8,8 @@ services:
     environment:
       - url=${URL_3D}
     volumes:
-      - /home/pi/nfsdocker-volumes/tolley/content:/var/lib/ghost/content
+      - /home/oli/nfsdocker-volumes/tolley/content:/var/lib/ghost/content
+        #- /home/pi/nfsdocker-volumes/tolley/content:/var/lib/ghost/content
     ports:
       - 3004:2368
     restart: unless-stopped
