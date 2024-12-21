@@ -5,7 +5,7 @@ services:
     image: crazymax/diun:latest
     command: serve
     volumes:
-      - "./data:/data"
+      - "~/nfsdocker-volumes/diun/data:/data"
       - "/var/run/docker.sock:/var/run/docker.sock"
     environment:
       - "TZ=Europe/Paris"
@@ -13,6 +13,10 @@ services:
       - "DIUN_WATCH_SCHEDULE=0 */6 * * *"
       - "DIUN_WATCH_JITTER=30s"
       - "DIUN_PROVIDERS_DOCKER=true"
+      - "DIUN_NOTIF_DISCORD_WEBHOOKURL=${DIUN_WEBHOOK_URL}"
+      - "DIUN_NOTIF_DISCORD_RENDERFIELDS=${DIUN_RENDER}"
+      - "DIUN_NOTIF_DISCORD_TIMEOUT=${DIUN_TIMEOUT}"
+      - "DIUN_NOTIF_DISCORD_TEMPLATEBODY=${DIUN_TEMPLATE}"
     labels:
       - "diun.enable=true"
     restart: always
