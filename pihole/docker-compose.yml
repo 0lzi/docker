@@ -25,6 +25,8 @@ services:
     cap_add:
       - NET_ADMIN # Required if you are using Pi-hole as your DHCP server, else not needed
     restart: unless-stopped
+    labels:
+      - "diun.enable=true"
     profiles:
       - pihole
   
@@ -50,5 +52,7 @@ services:
     cap_add:
       - NET_ADMIN # Required if you are using Pi-hole as your DHCP server, else not needed
     restart: unless-stopped
+    labels:
+      - "diun.enable=true"
     profiles:
       - pihole2

@@ -19,6 +19,8 @@ services:
     depends_on:
       - mariadb
     restart: unless-stopped
+    labels:
+      - "diun.enable=true"
   mariadb:
     image: linuxserver/mariadb:10.11.6
     container_name: mariadb

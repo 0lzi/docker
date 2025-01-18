@@ -25,3 +25,5 @@ services:
         - 80:80
         - 81:81
     restart: unless-stopped
+    labels:
+      - "diun.enable=true"
