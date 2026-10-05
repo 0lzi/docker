@@ -27,3 +27,5 @@ services:
     restart: unless-stopped
     labels:
       - "diun.enable=true"
+      - "com.centurylinklabs.watchtower.enable=true"
+      - "com.centurylinklabs.watchtower.scope=default"
