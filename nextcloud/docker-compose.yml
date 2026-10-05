@@ -20,6 +20,7 @@ services:
     restart: unless-stopped
     labels:
       - "diun.enable=true"
+      - "com.centurylinklabs.watchtower.enable=false"
   mariadb:
     image: linuxserver/mariadb:10.11.6
     container_name: mariadb
@@ -34,4 +35,7 @@ services:
     volumes:
       - /home/oli/nfsdocker-volumes/mariadb-new:/config
         #- /home/pi/nfsdocker-volumes/mariadb-new:/config
+    labels:
+      - "diun.enable=true"
+      - "com.centurylinklabs.watchtower.enable=false"
     restart: unless-stopped
