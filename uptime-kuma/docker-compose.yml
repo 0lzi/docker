@@ -13,3 +13,5 @@ services:
     restart: always
     labels:
       - "diun.enable=true"
+      - "com.centurylinklabs.watchtower.enable=true"
+      - "com.centurylinklabs.watchtower.scope=default"
