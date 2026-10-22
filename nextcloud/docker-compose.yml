@@ -1,7 +1,7 @@
 ---
 services:
   nextcloud:
-    image: linuxserver/nextcloud:35.0.0
+    image: linuxserver/nextcloud:35
     container_name: nextcloud
     environment:
       - PUID=1000
@@ -20,9 +20,9 @@ services:
     restart: unless-stopped
     labels:
       - "diun.enable=true"
-      - "com.centurylinklabs.watchtower.enable=false"
+      - "com.centurylinklabs.watchtower.enable=true"
   mariadb:
-    image: linuxserver/mariadb:10.11.6
+    image: linuxserver/mariadb:11
     container_name: mariadb
     environment:
       - PUID=1000
