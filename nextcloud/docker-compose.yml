@@ -1,7 +1,7 @@
 ---
 services:
   nextcloud:
-    image: linuxserver/nextcloud:35
+    image: linuxserver/nextcloud:latest
     container_name: nextcloud
     environment:
       - PUID=1000
