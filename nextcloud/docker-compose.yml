@@ -22,7 +22,7 @@ services:
       - "diun.enable=true"
       - "com.centurylinklabs.watchtower.enable=true"
   mariadb:
-    image: linuxserver/mariadb:11
+    image: linuxserver/mariadb:11.8.9
     container_name: mariadb
     environment:
       - PUID=1000
